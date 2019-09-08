@@ -60,9 +60,9 @@ var
   f_allvideo: string = '';
   f_allimage: string = '';
 
-function FileExtIn(filename: string; f_scanext: string): boolean;
-function FileIsImage(filename: string): boolean;
-function FileIsAudioVideo(filename: string): boolean;
+function FileExtIn(const filename: string; const f_scanext: string): boolean;
+function FileIsImage(const filename: string): boolean;
+function FileIsAudioVideo(const filename: string): boolean;
 
 { -------------------------------------------------------------------- }
 
@@ -131,7 +131,7 @@ begin
 
 end;
 
-function FileExtIn(filename: string; f_scanext: string): boolean;
+function FileExtIn(const filename: string; const f_scanext: string): boolean;
 var
   ext: string;
 begin
@@ -160,12 +160,12 @@ begin
 
 end;
 
-function FileIsImage(filename: string): boolean;
+function FileIsImage(const filename: string): boolean;
 begin
   Result := FileExtIn(filename, f_allimage);
 end;
 
-function FileIsAudioVideo(filename: string): boolean;
+function FileIsAudioVideo(const filename: string): boolean;
 begin
   Result := FileExtIn(filename, f_allaudio) or FileExtIn(filename, f_allvideo);
 end;
